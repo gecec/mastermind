@@ -1,0 +1,44 @@
+input {
+	width: expression((this.type == 'text' || this.type == 'password') ?   '200px' :   '');
+}
+
+input {
+	margin-left: expression((this.type == 'text' || this.type == 'password') ?   '10px' :   '');
+}
+
+input {
+	padding: expression((this.type == 'text' || this.type == 'password' ) ?   '5px' :   '');
+}
+
+input {
+	border: expression((this.type == 'text' || this.type == 'password') ?   'solid 1px #000' :   '');
+}
+
+input {
+	text-align: expression((this.type == 'text' || this.type == 'password') ?   'left' :   '');
+}
+
+#loginform input{
+	width: expression(this.type == 'submit' ? '100px' : '');
+}
+
+#loginform input{
+	margin-top: expression(this.type == 'submit' ? '10px' : '');
+}
+
+#loginform input{
+	margin-left: expression(this.type == 'submit' ? '50px' : '');
+}
+
+/*#loginform input{
+	margin-top: expression(this.type == 'checkbox' ? '20px' : '');
+}
+
+*/#loginform label {
+	margin: 10px 0 0 0;
+}
+
+div#calendar td.full_day ul {
+	left: 50px;
+	top: -15px;
+}

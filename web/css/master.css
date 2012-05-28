@@ -1,0 +1,427 @@
+/*
+	Design by Free CSS Templates
+	http://www.freecsstemplates.org
+	Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+/* Basic */
+
+
+*
+{
+	margin: 0em;
+	padding: 0em;
+}
+
+
+
+h1,h2
+{
+}
+
+body
+{
+	font-family: "trebuchet ms", sans-serif;
+	font-size: 10pt;
+	background-color: #fff;
+	color: #555;
+}
+
+a
+{
+	color: #007788;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+.clear
+{
+	clear: both;
+}
+
+/* Outer */
+
+#outer
+{
+	position: relative;
+
+	margin: 0.1em;
+}
+
+/* Header */
+
+#header
+{
+	position: absolute;
+	top: 4.5em;
+	background: #073C4C top right no-repeat;
+	height: 135px;
+	width: 100%;
+}
+
+#header h1
+{
+	position: absolute;
+	top: 1.2em;
+	left: 1.0em;
+	font-size: 2.5em;
+	color: #fff;
+}
+
+#header h2
+{
+	position: absolute;
+	top: 6em;
+	left: 2.5em;
+	font-size: 1.0em;
+	font-weight: normal;
+	color: #fff;
+}
+
+#header a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Menu */
+
+#menu
+{
+	position: absolute;
+	width: 100%;
+	top: 0em;
+	left: 0em;
+	background: #007788 url('../img/x3.gif') top left repeat-x;
+	height: 4em;
+}
+
+#menu ul
+{
+	list-style: none;
+	position: absolute;
+	bottom: 0em;
+	left: 1em;
+}
+
+#menu li
+{
+	display: block;
+	float: left;
+}
+
+#menu li.last
+{
+	margin-left:750px;
+}
+
+#menu li a
+{
+	color: #fff;
+	display: block;
+	padding: 0.75em 1.25em 1.25em 1.25em;
+	text-decoration: none;
+}
+
+#menu li a:hover
+{
+	background: #007788 url('../img/x4.gif') top left repeat-x;
+	text-decoration: underline;
+}
+
+/* Content */
+
+#content
+{
+	line-height: 1.7em;
+	padding-top: 188px;
+}
+
+#content p
+{
+	/* margin-bottom: 1.5em;*/
+	margin: 10px;
+}
+
+#content h2,h3,h4,h5,h6
+{
+	width: 100%;
+	position: relative;
+	left: -14px;
+	/*margin: 0em -22px 1.2em 0em;*/
+    margin-bottom: 10px;
+	color: #333;
+	/*padding: 1.1em 14px 0.0em 14px;*/
+	font-size: 1.1em;
+	/* background: #fff url('../img/x2.gif') top left repeat-x; */
+	text-align: center;
+}
+
+#content h2 span, #content h3 span
+{
+	position: absolute;
+	top: 0em;
+	right: 0em;
+	background: #fff url('../img/x1.gif') top right no-repeat;
+	width: 16px;
+	height: 28px;
+}
+
+#content ul
+{
+	margin-bottom: 1.5em;
+	padding-left: 1em;
+}
+
+#content blockquote
+{
+	border: dashed 1px #BFB793;
+	background: #FFFEFB url('../img/x5.gif') top left repeat-x;
+	padding: 1em;
+	margin-bottom: 1.5em;
+}
+
+#content blockquote p
+{
+	margin-bottom: 0em;
+}
+
+/* Primary Content */
+
+#primaryContentContainer
+{
+	position: relative;
+	float: left;
+	/*margin-right: -40em;*/
+	width: 100%;
+}
+
+#primaryContent
+{
+	/*margin: 0em 33em 0em 0em;*/
+	padding-top: 1.5em;
+	width: 100%;
+	/*text-align: center;*/
+}
+
+/* Secondary Content */
+
+#secondaryContent
+{
+	position: relative;
+	float: right;
+	width: 12em;
+	padding: 1.5em;
+	margin-right: 1em;
+}
+
+/* Tertiary Content */
+
+#tertiaryContent
+{
+	position: relative;
+	float: right;
+	width: 12em;
+	padding: 1.5em;
+}
+
+/* Footer */
+
+#footer
+{
+	padding: 1.5em;
+	padding-top: 30px;
+	/* background: #fff url('../img/x2.gif') top left repeat-x; */
+	text-align: center;
+}
+
+/*inputs & textarea*/
+#inputArea input, #inputArea textarea
+{
+	  font-family: Arial, Sans-Serif;
+	  font-size: 13px;
+	  margin-bottom: 5px;
+	  display: block;
+	  padding: 4px;
+	  width: 300px;
+}
+
+.activeField
+{
+	background-image: none;
+    background-color: #ffffff;
+    border: solid 1px #33677F;
+}
+
+.idle
+{
+	    border: solid 1px #85b1de;
+	    background-image: url( '../img/gray_bg.png' );
+	    background-repeat: repeat-x;
+	    background-position: top;
+		background-color:#FFFFFF;
+}
+
+#auth {
+	position: absolute;
+	height: 30px;
+	left: 95%;
+	top: 20px;
+}
+#auth a {
+	color: #fff;
+	text-decoration: none;
+}
+#auth a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.accordion {
+	/*width: 900px;*/
+	margin: 30px;
+}
+.accordion h3 {
+	background: #e9e7e7 url(../img/arrow-square.gif) no-repeat right -51px;
+	padding: 7px 15px;
+	margin: 0;
+	font: bold 120%/100% Arial, Helvetica, sans-serif;
+	border: solid 1px #c4c4c4;
+	border-bottom: none;
+	cursor: pointer;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+}
+.accordion h3:hover {
+	background-color: #e3e2e2;
+}
+.accordion h3.active {
+	background-position: right 5px;
+}
+.accordion p {
+	background: #f7f7f7;
+	margin: 0;
+	padding:  10px 10px 10px;
+}
+.accordion input[type=text] {width: 80px;}
+fieldset { -moz-border-radius-bottomleft:10px;-moz-border-radius-bottomright:10px; -moz-border-radius-topleft:10px; -moz-border-radius-topright:10px; width:98%; margin:10px 5px 15px 5px; padding-bottom: 10px;}
+
+/*input, textarea{
+	text-align: left;
+	margin-left: 10px;
+	padding:5px;
+	border:solid 1px #000;
+}*/
+
+label { display:block; margin:5px 10px; text-align: left;}
+legend {display: none;}
+
+.hasDatepicker {
+	margin-right: 3px;
+	width: 80px;
+}
+
+input[type=text], input[type=password] { width:200px; padding:5px; border:solid 1px #000; text-align: left; margin-left: 10px;}
+/*input[type=checkbox] {padding:5px; margin-left: 10px;}
+
+*/fieldset select {margin-left: 10px;}
+#oncedatepicker, #everydstartdatepicker, #everydfinishdatepicker, #everywstartdatepicker, #everywfinishdatepicker, #everymstartdatepicker, #everymfinishdatepicker {margin-left: 5px; width: 100px;}
+/*input { width:200px; }
+ I don't know how to hack input[type=text] in ie6. so had to do this hell
+input#check1,input#check2,input#check3,input#check4,input#months1,input#months2,input#months3,input#months4,input#months5,input#months6,input#months7,input#months8,input#months9,input#months10,input#months11,input#months12  { width:20px; border: 0;}
+*/
+
+#SaveOrder {margin-left: 50%; width: 100px; border: 0; text-align: center;}
+
+
+textarea { width:300px; padding:5px; border:solid 1px #000; text-align: left; margin-left: 10px;}
+
+fieldset legend { font-size:18px; margin-top:10px; color:#b0232a; font-weight:bold;}
+.prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
+.prev:hover, .next:hover { background-color:#000; text-decoration:none;}
+.prev { float:left;}
+.next { float:right;}
+#steps { list-style:none; width:90%; overflow:hidden; margin:0px; padding:0px;}
+#steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
+#steps li span {font-size:11px; display:block;}
+#steps li.current { color:#000;}
+#makeWizard { background-color:#b0232a; color:#fff; padding:5px 10px; text-decoration:none; font-size:18px;}
+#makeWizard:hover { background-color:#000;}
+
+#legends {
+	margin-left: 25%;
+	margin-bottom: 10px;
+	/*width: 60%;*/
+}
+
+#legends img {
+	border: 0;
+}
+
+
+#pager_left, #userpager_left, #klasspager_left {
+	width: 70%;
+}
+
+#pager_center, #userpager_center, #klasspager_center {
+	width: 30% !important;
+}
+
+#pager_right, #userpager_right, #klasspager_right {
+	display: none;
+}
+
+.star {
+	color: #f00;
+}
+
+#tabs {
+	border: none;
+}
+
+#tabs p {
+	margin-bottom: 25px;
+}
+
+#loginform {
+	margin-left: 45%;
+}
+
+#loginform input[type=submit]{
+	width: 100px;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+#loginform input[type=checkbox]{
+	margin-top: 20px;
+}
+
+#pager input , #userpager input , #klasspager input {
+	width: 10px;
+}
+
+#mybutton {
+	margin-left: 92%;
+}
+
+#buttongroup {
+	margin-left: 85% !important;
+}
+
+#klassInfo {
+	width: 150px;
+}
+
+#fragment-2 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#fragment-2 #pager_left,#fragment-2 #userpager_left,#fragment-2 #klasspager_left  {
+	width: 350px;
+}

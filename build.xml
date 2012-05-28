@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="mastermind" basedir=".">
+	<import file="tomcat-tasks.xml"/>
+	
+	<property file="build.properties" />
+
+	<property name="tmp.dir" value="temp" />
+	<property name="bin.dir" value="classes" />
+	<property name="src.dir" value="src/java" />
+	<property name="war.dir" value="web" />
+	<property name="lib.dir" value="lib" />
+	<property name="jdk.bin" value="${jdk.home}/bin" />
+	<property name="test.dir" value="test" />
+	<property name="docs" value="docs" />
+	
+	<patternset id="library.patterns">
+		<include name="*.jar"/>
+	</patternset>
+
+	<path id="production.classpath">
+		<fileset dir="${lib.dir}">
+		  <patternset refid="library.patterns"/>
+		</fileset>
+		<pathelement path="${bin.dir}"/>
+	</path>
+
+	<path id="test.classpath">
+		<fileset dir="${lib.dir}">
+		  <patternset refid="library.patterns"/>
+		</fileset>
+		<pathelement path="${bin.dir}"/>
+		<pathelement path="${test.dir}"/>
+	</path>
+	
+	<target name="clean">
+		<delete dir="${bin.dir}" />
+	</target>
+	
+	<target name="compile" depends="clean">
+        <copy todir="${bin.dir}">
+			<fileset dir="${src.dir}">
+				<exclude name="**/.svn/**" />
+				<exclude name="**/.git/**" />
+				<include name="**/*.properties/**" />
+                <include name="**/*.xml/**" />
+			</fileset>
+		</copy>
+		<echo message="${jdk.bin}" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" fork="true" executable="${jdk.bin}/javac">
+			<classpath refid="production.classpath"/>
+		</javac>		
+	</target>
+	
+	<target name="war" depends="compile,testecho">
+		<war destfile="${project.name}.war" webxml="${war.dir}/WEB-INF/web.xml">
+			<fileset file="revision" />
+
+            <fileset dir="${war.dir}">
+				<exclude name="**/.svn/**" />
+            	<exclude name="**/.git/**" />
+				<exclude name="**/WEB-INF/**" />
+			</fileset>
+
+			<lib dir="${lib.dir}">
+				<exclude name="**/.svn/**" />
+				<exclude name="**/.git/**" />
+				<exclude name="servlet.jar" />
+			</lib>
+			<classes dir="${bin.dir}"/>
+			<webinf dir="${war.dir}/WEB-INF" />
+		</war>
+	</target>
+	
+	<target name="current_date">
+		<tstamp>
+			<format property="now" pattern="dd.MM.yyyy hh:mm:ss" />
+		</tstamp>
+		<echo message="BUILD TIME = ${now}" />
+	</target>
+	
+	<target name="svn-info">
+		<exec executable="svn" output="svn.properties">
+			<arg value="info" />
+		</exec>
+		<property prefix="svn" file="svn.properties"/>
+		<echo>Revision: ${svn.Revision}</echo>
+	</target>
+			
+	<!-- target name="testecho" depends="current_date,svn-info" -->
+	<target name="testecho" depends="current_date">
+		<echo file="revision" append="false">Built-By: ${app.author}
+Revision: ${svn.Revision}
+Built-On: ${now}</echo>
+	</target>
+	
+	<target name="deploy" depends="undeploy,war">
+		<deploy url="${tomcat.manager.url}" username="${tomcat.username}"
+			password="${tomcat.password}" path="/${project.name}" war="${project.name}.war" />
+	</target>
+	
+	<target name="undeploy">
+		<undeploy url="${tomcat.manager.url}" username="${tomcat.username}"
+			password="${tomcat.password}" path="/${project.name}" />
+	</target>
+	
+	<target name="stop">
+	  <stop url="${tomcat.manager.url}" username="${tomcat.username}" password="${tomcat.password}"
+	        path="/${project.name}"/>
+	</target>
+	
+	<target name="doc">
+		 <javadoc packagenames="*.*"
+		           sourcepath="${src.dir}"		           
+		           defaultexcludes="yes"
+		           destdir="${docs}/api"
+		           author="true"
+		           version="true"
+		           use="true"
+		           windowtitle="MasterMind API">
+		    <doctitle><![CDATA[<h1>MasterMind</h1>]]></doctitle>
+		    <bottom><![CDATA[<i>Copyright &#169; 2012 All Rights Reserved.</i>]]></bottom>
+		    <tag name="todo" scope="all" description="To do:"/>		    
+		    <link offline="true" href="http://java.sun.com/j2se/1.5.0/docs/api/" packagelistLoc="C:\tmp"/>
+		    <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+		  </javadoc>
+	</target>
+
+</project>
